@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Logger</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="p-5">
+    <div class="container">
+        <h2 class="mb-4">Temperature Logger</h2>
+        
+        <form id="tempForm" class="row g-3 mb-4">
+            <div class="col-auto">
+                <input type="number" step="0.1" class="form-control" name="temperature" placeholder="Enter Temperature" required>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <input type="date" id="start" class="form-control" placeholder="Start Date">
+            </div>
+            <div class="col-md-3">
+                <input type="date" id="end" class="form-control" placeholder="End Date">
+            </div>
+            <div class="col-md-2">
+                <input type="number" step="0.1" id="min_temp" class="form-control" placeholder="Min Temp">
+            </div>
+            <div class="col-md-2">
+                <input type="number" step="0.1" id="max_temp" class="form-control" placeholder="Max Temp">
+            </div>
+            <div class="col-md-2">
+                <button id="filterBtn" type="button" class="btn btn-secondary w-100">Filter</button>
+            </div>
+        </div>
+
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Temperature (°C)</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody id="dataTable"></tbody>
+        </table>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
